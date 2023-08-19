@@ -3241,39 +3241,17 @@ paramsDesc={['公告类型，详见表格']}>
 
 ### 校园要闻 {#xi-bei-nong-lin-ke-ji-da-xue-xiao-yuan-yao-wen}
 
-<Route author="dingyx99" example="/nwafu/news" path="/nwafu/news" />
+<Route author="dingyx99 karinido" example="/nwafu/lib" path="/nwafu/:type?" paramsDesc={['默认为 `jiaowu`']}>
 
-### 教务公告 {#xi-bei-nong-lin-ke-ji-da-xue-jiao-wu-gong-gao}
+通知类别
 
-<Route author="dingyx99" example="/nwafu/jiaowu" path="/nwafu/jiaowu" />
 
-### 后勤公告 {#xi-bei-nong-lin-ke-ji-da-xue-hou-qin-gong-gao}
+| 图书馆 | 共青团团委 | 信工学院 | 后勤管理处 | 计划财务处 | 教务处 | 新闻网 | 信息化管理处 | 研究生院 |
+| -------- | -------- | -------- | -------- | ------------ | -------- | -------- | -------- | -------- |
+| lib    | youth | cie    | gs    | jcc        | jiaowu    | news    | nic    | yjshy    |
 
-<Route author="dingyx99" example="/nwafu/gs" path="/nwafu/gs" />
+</Route>
 
-### 图书馆公告 {#xi-bei-nong-lin-ke-ji-da-xue-tu-shu-guan-gong-gao}
-
-<Route author="dingyx99" example="/nwafu/lib" path="/nwafu/lib" />
-
-### 网教中心公告 {#xi-bei-nong-lin-ke-ji-da-xue-wang-jiao-zhong-xin-gong-gao}
-
-<Route author="dingyx99" example="/nwafu/nic" path="/nwafu/nic" />
-
-### 团委公告 {#xi-bei-nong-lin-ke-ji-da-xue-tuan-wei-gong-gao}
-
-<Route author="dingyx99" example="/nwafu/54youth" path="/nwafu/54youth" />
-
-### 计财处公告 {#xi-bei-nong-lin-ke-ji-da-xue-ji-cai-chu-gong-gao}
-
-<Route author="dingyx99" example="/nwafu/jcc" path="/nwafu/jcc" />
-
-### 研究生院公告 {#xi-bei-nong-lin-ke-ji-da-xue-yan-jiu-sheng-yuan-gong-gao}
-
-<Route author="dingyx99" example="/nwafu/yjshy" path="/nwafu/yjshy" />
-
-### 信息工程学院公告 {#xi-bei-nong-lin-ke-ji-da-xue-xin-xi-gong-cheng-xue-yuan-gong-gao}
-
-<Route author="dingyx99" example="/nwafu/cie" path="/nwafu/cie" />
 
 ## 西南财经大学 {#xi-nan-cai-jing-da-xue}
 
@@ -3841,6 +3819,10 @@ paramsDesc={['公告类型，详见表格']}>
 | xwdt2016/tzgg2016 | xwdt2016/kjdt2016 | kxcb2016/kpdt2016 |
 
 </Route>
+
+### 遗传与发育生物学研究所 学术活动 {#zhong-guo-ke-xue-yuan-yi-chuan-yu-fa-yu-sheng-wu-xue-yan-jiu-suo-xue-shu-huo-dong}
+
+<Route author="panyq357" example="/cas/genetics/xshd" path="/cas/genetics/xshd" radar="1"/>
 
 ## 中国科学院大学 {#zhong-guo-ke-xue-yuan-da-xue}
 
