@@ -1,7 +1,7 @@
-import React from 'react';
 import MarkdownIt from 'markdown-it';
 import Badge from './Badge';
 import Translate from '@docusaurus/Translate';
+import Link from '@docusaurus/Link';
 
 export default function Route({
   author = 'DIYgod',
@@ -13,8 +13,7 @@ export default function Route({
   supportPodcast = null,
   supportScihub = null,
   radar = null,
-  rssbud = null,
-  selfhost = null,
+  configRequired = null,
   puppeteer = null,
   children = null,
 }: {
@@ -27,8 +26,7 @@ export default function Route({
   supportPodcast?: boolean;
   supportScihub?: boolean;
   radar?: boolean;
-  rssbud?: boolean;
-  selfhost?: boolean;
+  configRequired?: boolean;
   puppeteer?: boolean;
   children?: JSX.Element | JSX.Element[];
 }): JSX.Element {
@@ -48,41 +46,37 @@ export default function Route({
                 {supportBT && <Badge type="tip"><Translate id="badge.supportBT" /></Badge>}
                 {supportPodcast && <Badge type="tip"><Translate id="badge.supportPodcast" /></Badge>}
                 {supportScihub && <Badge type="tip"><Translate id="badge.supportSciHub" /></Badge>}
-                {puppeteer && <Badge type="warn"><Translate id="badge.puppeteer" /></Badge>}
+                {puppeteer && <Badge type="warning"><Translate id="badge.puppeteer" /></Badge>}
                 {anticrawler && (
-                    <a target="_blank" href="/faq.html">
-                        <Badge type="warn"><Translate id="badge.anticrawler" /></Badge>
-                    </a>
+                    <Link to="/faq">
+                        <Badge type="caution"><Translate id="badge.anticrawler" /></Badge>
+                    </Link>
                 )}
-                {selfhost && (
-                    <a target="_blank" href="/install/">
-                        <Badge type="warn"><Translate id="badge.selfhost" /></Badge>
-                    </a>
+                {configRequired && (
+                    <Link to="/install/config#route-specific-configurations">
+                        <Badge type="warning"><Translate id="badge.configRequired" /></Badge>
+                    </Link>
                 )}
                 {radar && (
-                    <a target="_blank" href="https://github.com/DIYgod/RSSHub-Radar">
+                    <Link to="/usage#radar">
                         <Badge type="tip"><Translate id="badge.radar" /></Badge>
-                    </a>
-                )}
-                {rssbud && (
-                    <a target="_blank" href="https://github.com/Cay-Zhang/RSSBud">
-                        <Badge type="tip"><Translate id="badge.rssbud" /></Badge>
-                    </a>
+                    </Link>
                 )}
             </p>
             <p className="author">
                 <Translate id="route.author" />
                 {author.split(' ').map((uid) => (
-                    <a href={`https://github.com/${uid}`} target="_blank" key={uid}>
+                    <Link to={`https://github.com/${uid}`} key={uid}>
                         @{uid}{' '}
-                    </a>
+                    </Link>
                 ))}
             </p>
             <p className="example">
                 <span><Translate id="route.example" /></span>
-                <a href={demoUrl} target="_blank">
+                <Link to={demoUrl}>
                     {demoUrl}
-                </a>
+                </Link>
+                <img loading="lazy" src={`https://img.shields.io/website.svg?label=&url=${demoUrl}&cacheSeconds=7200`} />
             </p>
             <p className="path">
                 <Translate id="route.path" /><code>{path}</code>
